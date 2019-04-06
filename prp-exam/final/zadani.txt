@@ -1,0 +1,45 @@
+B0B99PRP -- implementacni cast zkousky -- 16.1.2017
+
+Necht RGB barevna paleta je:
+
+r .. red
+g .. green
+b .. blue
+y .. yellow		[1,1,0]
+m .. magenta		[1,0,1]
+s .. gray (silver)	[0.5,0.5,0.5]
+w .. white
+k .. black
+
+Napiste program, ktery 
+
+a) (5 bodu)
+
+./main -s 100x100 -o1 image.png -b1 r -f1 g
+
+Vykresli obrazek velikosti 100x100. Pozadi obrazku bude mit barvu b1, ve stredu bude vykreslen obdelnik o polovicni velikosti a barve f1. Pokud neni zadana velikost nebo nektera z barev, zvoli se defaultni (zvolena programatorem) a uzivatel je o tom informovan. Pokud neni zadan nazev vystupniho souboru, program skonci chybovou navratovou hodnotou 101 a program je ukoncen. Paramenty prikazove radky: velikost obrazku je vzdy prvni argument, za hodnotou argumentu -o1 nasleduji barvy v libovolnem poradi.
+
+Bonus (1 bod): vykresleny obdelnik ma okraj o zadane sirce a barve.
+
+b) (5 bodu)
+
+./main -s 100x100 -o2 image2.png -b2 y -f2 k -x 10
+
+Vykresli obrazek, na kterem je sachovnice s pozadim b2 a popredim f2. Hodnota parametru x udava, kolik poli je na sachovnici. Nejmensi velikost pole je 2x2 pixely. Pokud neni velikost obrazku delitelna celociselne poctem poli, umisti se sachovnice do stredu obrazku a zbyly okraj je vyplnen barvou pozadi.
+
+Bonus (1 bod): sachovnice je vykreslena do mrize o zadane sirce a barve
+
+c) (5 bodu)
+
+./main -s 100x100 -o3 image3.png < data.in
+
+Vykresli obrazek, na kterem jsou umisteny geometricke tvary, popsane v datovem souboru. Format dat v souboru je nasledujici:
+
+r:r:10:40:40 .. cerveny ctverec o hrane 10px, jehoz stred je v pozici 40,40 (pokud je delka hrany suda, vypocet stredu necham na vas)
+r:g:5:50:50  .. zeleny ctvere o hrane 5px, jehoz stred je v pozici 50,50
+
+Pokud ma objekt stred mimo kreslici plochu, nekreslete ho. Pokud ma stred uvnitr plochy a zasahuje ven, vykreslete jen tu cast, ktera je v plose.
+
+Bonus (3 body): krome ctverce bude mozne vykreslit i kruh
+
+c:b:10:40:30 .. modry kruh o prumeru 10px, jehoz stred je v pozici 40,30
